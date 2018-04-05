@@ -17,12 +17,6 @@ class ViewPhp
     protected $view;
 
     /**
-     * Default part template dir
-     * @var string
-     */
-    protected $templateDir = 'part';
-
-    /**
      * @var string
      */
     protected $ext = '.html.php';
@@ -37,15 +31,17 @@ class ViewPhp
     /**
      * ViewPhp constructor.
      * @param \CBitrixComponentTemplate $component
-     * @param null $templateDir
+     * @param null $templateSubDir
      */
-    public function __construct(\CBitrixComponentTemplate $component, $templateDir = null)
+    public function __construct(\CBitrixComponentTemplate $component, $templateSubDir = null)
     {
-        if($templateDir == null){
-            $templateDir = $this->templateDir;
-        }
         $componentTemplateDir = $_SERVER['DOCUMENT_ROOT'].$component->GetFolder();
-        $loaderPath = $componentTemplateDir.DIRECTORY_SEPARATOR.$templateDir.DIRECTORY_SEPARATOR.'%name%'.$this->ext;
+        if($templateSubDir == null){
+            $loaderPath = $componentTemplateDir.DIRECTORY_SEPARATOR.'%name%'.$this->ext;
+        }
+        else{
+            $loaderPath = $componentTemplateDir.DIRECTORY_SEPARATOR.$templateSubDir.DIRECTORY_SEPARATOR.'%name%'.$this->ext;
+        }
         $loader = new FilesystemLoader($loaderPath);
         $this->view = new PhpEngine(new TemplateNameParser(), $loader);
     }
