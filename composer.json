@@ -1,0 +1,22 @@
+{
+    "name": "msvdev/bitrix-extension-view",
+    "description": "Bitrix templating extension",
+    "keywords": ["bitrix", "symfony", "templating"],
+    "type": "bitrix-extension",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Sergey Mihaylichenko",
+            "email": "senya_m@bk.ru",
+            "homepage": "https://github.com/mihaylichenko/"
+        }
+    ],
+    "require": {
+        "symfony/templating": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Msvdev\\Bitrix\\View\\": ""
+        }
+    }
+}
