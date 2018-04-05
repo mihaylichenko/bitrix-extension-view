@@ -4,6 +4,7 @@
     "keywords": ["bitrix", "symfony", "templating"],
     "type": "bitrix-extension",
     "version": "1.0.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Sergey Mihaylichenko",
