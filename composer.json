@@ -3,7 +3,7 @@
     "description": "Bitrix templating extension",
     "keywords": ["bitrix", "symfony", "templating"],
     "type": "bitrix-extension",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "MIT",
     "authors": [
         {
